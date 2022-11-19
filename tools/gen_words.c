@@ -3,7 +3,7 @@
 int main(void)
 {
 	int fd = open("words.txt", O_RDONLY);
-	int fd2 = open("words.txt", O_WRONLY);
+	int fd2 = open("words2.txt", O_WRONLY);
 	char *line;
 	while ((line = get_next_line(fd)) != 0)
 	{

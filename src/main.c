@@ -122,7 +122,7 @@ void	ft_putstr_dlay(char *str)
 	}
 }
 
-void printer(char *address_base, int fd, char **word_list, int i)
+void printer(char *address_base, char **word_list, int i)
 {
 	char	*address;
 	char	*list;
@@ -130,14 +130,14 @@ void printer(char *address_base, int fd, char **word_list, int i)
 	address = ft_strjoin(address_base, ft_itoa(50 + i));
 	printf("%s", color(GREEN));
 	ft_putstr_dlay(address);
-	list = random_char_list(fd, word_list);
+	list = random_char_list(word_list);
 	ft_putstr_dlay("\t");
 	ft_putstr_dlay(list);
 	ft_putstr_dlay("\t");
 	address = ft_strjoin(address_base, ft_itoa(50 + i + 10));
 	ft_putstr_dlay(address);
 	ft_putstr_dlay("\t");
-	list = random_char_list(fd, word_list);
+	list = random_char_list(word_list);
 	ft_putstr_dlay(list);
 	printf("%s\n", color(RESET));
 }
@@ -164,7 +164,7 @@ int	main(void)
 		address_base = "0x42-L";
 		printf("%sEnter the right Password in the list%s\n\n", color(ORANGE), color(RESET));
 		for (int i = 0; i < 10; i++)
-			printer(address_base, fd, word_list, i);
+			printer(address_base, word_list, i);
 		printf("\n");
 		while (1)
 		{
